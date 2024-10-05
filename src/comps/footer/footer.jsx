@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom'
 import home from './../../assets/images/home.svg'
 import about from './../../assets/images/user.svg'
 import contact from './../../assets/images/phone.svg'
-import linkedln from './../../assets/images/facebook.svg'
+import linkedln from './../../assets/images/icons8-linkedin.svg'
 import instagram from './../../assets/images/instagram.svg'
-import twitter from './../../assets/images/twitter.svg'
-import youtube from './../../assets/images/youtube.svg'
+import twitter from './../../assets/images/icons8-x.svg'
+import gmail from './../../assets/images/icons8-gmail.svg'
 
 export default function Footer() {
   return (
@@ -29,9 +29,11 @@ export default function Footer() {
 
         <div className="socials">
           <img src={linkedln} alt=".." />
-          <Link to={'https://instagram.com/sir_jrr'}><img src={instagram} alt=".." /></Link>
+          <Link to={'https://instagram.com/sir_jrr'}>
+            <img src={instagram} alt=".." />
+          </Link>
           <img src={twitter} alt=".." />
-          <img src={youtube} alt=".." />
+          <img src={gmail} alt=".." />
         </div>
 
         <div className="footer-text">

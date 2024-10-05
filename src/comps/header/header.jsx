@@ -1,5 +1,6 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 export default function Header() {
 
@@ -23,13 +24,13 @@ export default function Header() {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  },[]);
 
   const navs = [
     {name: 'Home', data: 'Home', path: '/Home'},
-    {name: 'Portfolio', data: 'Portfolio', path: '/portfolio'},
-    {name: 'About', data: 'About', path: '/About-me'},
-    {name: 'Contact', data: 'Contact', path: '/Contact'}
+    {name: 'Skills', data: 'Skills', path: '/myskills'},
+    {name: 'About', data: 'About', path: '/about-me'},
+    {name: 'Contact', data: 'Contact', path: '/contact-me'}
   ]
 
   const handleClick = () => {
@@ -63,9 +64,9 @@ export default function Header() {
           <ul className='nav navbar-right'>
             {navs.map((page, index) => (
               <li key={index}>
-                <a data-text={page.data} className={`page-links ${active}`} to={page.path}>
+                <Link data-text={page.data} className={`page-links ${active}`} to={page.path}>
                   {page.name}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -76,7 +77,7 @@ export default function Header() {
         <div className="container">
           <div className="intro-text">
             <h1 className="intro-heading">Full-stack<br/><b>Node JS</b> | <b>React JS</b> <br/>developer</h1>
-            <button href="#services" className="btn-xl">Contact</button>
+            <button href="#services" className="btn-xl">Download CV</button>
           </div>
         </div>
       </section>

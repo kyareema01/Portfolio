@@ -1,8 +1,8 @@
 import React from 'react'
-import Button from '../../comps/button'
-import workImg from '../../assets/images/omeife.svg'
-import workImg1 from '../../assets/images/work-1.png'
-import workImg2 from '../../assets/images/work-2.png'
+import Button from './../comps/button'
+import workImg from './../assets/images/omeife.svg'
+import workImg1 from './../assets/images/work-1.png'
+import workImg2 from './../assets/images/work-2.png'
 
 function Cards() {
   const cards = [
@@ -21,6 +21,21 @@ function Cards() {
       name: 'project 3',
       imgSrc: workImg2,
       caption: 'Online Campus chat-forum'
+    }, {
+      key: 3,
+      name: 'project 4',
+      imgSrc: workImg,
+      caption: 'IdeasProgramme'
+    }, {
+      key: 4,
+      name: 'project 5',
+      imgSrc: workImg1,
+      caption: 'E-commerce Website'
+    }, {
+      key: 5,
+      name: 'project 6',
+      imgSrc: workImg2,
+      caption: 'Super Mario Bros'
     }
   ]
 
@@ -38,11 +53,11 @@ function Cards() {
         }
 
         return (
-        <div className={`image-container ${cardIndex}`}>
+         <div className={`image-container ${cardIndex}`}>
           <div className='number'>{`0${index + 1}`}</div>
-            <figcaption className={`caption ${cardIndex}`}>{card.caption}</figcaption>
-            <img src={card.imgSrc} alt=".." key={index} />
-        </div>
+          <figcaption className={`caption ${cardIndex}`}>{card.caption}</figcaption>
+          <img src={card.imgSrc} alt=".." key={index} />
+         </div>
       )})}
     </div>    
   )

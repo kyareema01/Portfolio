@@ -8,6 +8,7 @@
   --bg-bottom: #EEEEEE;
   --bg-blur: #393E46;
   --black: #051514;
+  --gray: #777777;
 }
 
 * {
@@ -419,12 +420,12 @@ section .btn-xl {
 
   .about-me {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 200px;
-    position: relative;
     padding: 100px 0px;
+
+    position: relative;
   }
 
   .left-about {
@@ -435,6 +436,7 @@ section .btn-xl {
   .left-header {
     display: flex;
     align-items: center;
+    justify-content: center;
   }
 
   .left-header h2 {
@@ -447,16 +449,46 @@ section .btn-xl {
   }
 
   .content {
-    width: 90%;
+    width: 100%;
+    text-align: center;
   }
+
+  .content h1 {
+    font-size: 25px;
+    font-weight: 700;
+  }
+
+  .content h1 span {
+    color: var(--green);
+  }
+
+  .content p:nth-child(2) {
+    font-size: 16px;
+    font-weight: 400;
+    margin: 10px 0;
+    color: var(--gray);
+  }
+
+  .content p:last-child {
+    font-size: 18px;
+    font-weight: 400;
+    margin: 10px 0;
+    color: var(--gray);
+  }
+
 
   .arrowD {
     display: flex;
     justify-content: center;
-    margin-top: 40px;
+
+    position: relative;
   }
 
   .arrowD img {
+    position: absolute;    
+    bottom: -200px;
+    right: 90px;
+
     transform: rotate(150deg);
   }
 
@@ -469,8 +501,6 @@ section .btn-xl {
   .music-container img {
     transform: rotateY(180deg);
   }
-
-
 
   .right-about {
     position: relative;
@@ -496,9 +526,53 @@ section .btn-xl {
     right: 28px;
   }
 
+  @media screen and (max-width: 1024px) {
+    .about-me {
+      flex-direction: column;
+    }
+
+    .arrowD img{
+      bottom: -150px;
+      transform: rotate(100deg);
+    }
+  }
+
   @media screen and (max-width: 768px) {
+
+    .about-me {
+      gap: 50px;
+    }
+
     .left-about {
       width: 100%;
+    }
+
+    .right-about {
+      width: 100%;
+    }
+
+    .content {
+      margin-top: 50px;
+      width: 100%;
+    }
+  
+    .content h1 {
+      font-size: 16px;
+      font-weight: 700;
+    }
+  
+    .content p:nth-child(2) {
+      font-size: 14px;
+      font-weight: 400;
+      margin: 10px 0;
+      color: var(--gray);
+    }
+  
+    .content p:last-child {
+      font-size: 16px;
+      font-weight: 400;
+      margin: 10px 0;
+      color: var(--gray);
     }
   }
 /* About me E*/
@@ -520,26 +594,34 @@ section .btn-xl {
 
   .frontend, .backend {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
   }
 
   .head {
-    width: 30%;
+    margin-top: 50px;
+    width: 20%;
   }
 
   .head h3 {
+    font-weight: 400;
     font-size: 20px;
   }
 
-  .head h3 span {
+  .head div {
+    font-size: 24px;
+    font-weight: 600;
+    font-size: 40px;
+  }
+
+  .head span {
     color: var(--green);
   }
 
   .skills {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    width: 70%;
+    /* justify-content: end; */
+    width: 50%;
   }
 
   .skills div p {
@@ -547,8 +629,46 @@ section .btn-xl {
     font-size: 18px;
   }
 
-  .skills img {
-    width: 50%;
+  .logo {
+    padding: 40px;
+    border: 1px solid var(--green);
+    border-radius: 10px;
+    margin: 10px;
+  }
+
+  .logo img {
+    transition: 1s all;
+  }
+
+  .logo:nth-child(1) img:hover {
+    cursor: pointer;
+    transform: rotate(90deg);
+  }
+
+  .hide {
+    opacity: 0;
+    transition: 2s all;
+    transform: translateX(-100%);
+    filter: blur(5px);
+  }
+
+  .show {
+    opacity: 1;
+    transform: translateX(0);
+    filter: blur(0);
+  }
+
+  .logo:nth-child(2) {
+    transition-duration: 200ms;
+  }
+  .logo:nth-child(3) {
+    transition-duration: 400ms;
+  }
+  .logo:nth-child(4) {
+    transition-duration: 600ms;
+  }
+  .logo:nth-child(5) {
+    transition-duration: 800ms;
   }
 
   @media screen and (max-width: 768px) {
@@ -614,7 +734,8 @@ section .btn-xl {
 }
 
 .card-cont {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 100px;
   justify-content: center;
   align-items: center;
@@ -627,7 +748,6 @@ section .btn-xl {
   width: 100%;
   background-color: rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(1px);
-  /* padding: 50px 30px; */
   border-radius: 20px;
   transition: ease 0.3s all;
   object-fit: cover;
@@ -644,14 +764,14 @@ section .btn-xl {
   /* border: dashed 1px var(--form); */
   color: var(--white);
   width: 100%;
-  height: 370px;
+  height: 300px;
 
   position: relative;
 }
 
 .caption {
   position: absolute;
-  bottom: -30px;
+  bottom: -60px;
   left: -50px;
 
   text-align: center;
@@ -673,7 +793,7 @@ section .btn-xl {
 
 .image-container.third {
   color: var(--green);
-  align-self: flex-end;
+  align-self: flex-start;
   transform: rotate(-3deg);
 }
 
@@ -682,7 +802,7 @@ section .btn-xl {
   align-items: center;
   justify-content: center;
 
-  background-color: var(--bg);
+  background-color: var(--green);
   color: var(--white);
   width: 70px;
   height: 70px;
@@ -703,13 +823,9 @@ section .btn-xl {
   }
 
   .card-cont {
-    flex-wrap: wrap;
+    grid-template-columns: 1fr 1fr;
     width: 100%;
     height: 1200px;
-  }
-
-  .image-container {
-    width: 50%;
   }
 
   .image-container.first, .image-container.third {
@@ -720,6 +836,11 @@ section .btn-xl {
 }
 
 @media screen and (max-width: 768px) {
+
+  .card-cont {
+    grid-template-columns: 1fr;
+    height: 100%;
+  }
 
   .recent-works {
     padding: 100px 0px;

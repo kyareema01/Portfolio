@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import Button from '../../comps/button'
-import contactImg from '../../assets/images/Contact-img.png'
-import ArrowD from '../../assets/images/arrowD.svg'
-import keyboard from '../../assets/images/keyboard.svg'
-import send from '../../assets/images/send.svg'
-import mail from '../../assets/images/mail.svg'
+import Button from './../comps/button'
+import contactImg from './../assets/images/Contact-img.png'
+import ArrowD from './../assets/images/arrowD.svg'
+import keyboard from './../assets/images/keyboard.svg'
+import send from './../assets/images/send.svg'
+import mail from './../assets/images/mail.svg'
 
 function LeftContact() {
   return (
