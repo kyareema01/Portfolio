@@ -8,7 +8,7 @@ import nodeImg from './../assets/images/icons8-node-js-150.png'
 
 export default function Myskills() {
 
-  const elementsRef = useRef([])
+const elementsRef = useRef([])
 
   useEffect(() => {
 
@@ -23,8 +23,8 @@ export default function Myskills() {
       })
     })
 
-     elementsRef.current.forEach((el) => observer.observe(el))
-     console.log(elementsRef.current)
+    elementsRef.current.forEach((el) => observer.observe(el))
+    console.log(elementsRef.current)
 
     return () => {
       observer.disconnect()
@@ -68,14 +68,6 @@ export default function Myskills() {
           </div>
         </div>
       </div>
-
-      {/* <div className="backend">
-        <h3>Back-End</h3>
-        
-        <div className="skills">
-          <h3>Coming Soon.....</h3>
-        </div>
-      </div> */}
     </div>
   )
 }

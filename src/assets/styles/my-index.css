@@ -263,10 +263,14 @@ section .btn-xl {
 
 
 .btn.medium {
-  background-color: var(--bg-blur);
   border: 1px solid var(--bg-blur);
-  color: var(--white);
   padding: 10px 40px;
+  transition: 0.5s ease;
+}
+
+.btn.medium:hover {
+  background-color: var(--bg-blur);
+  color: var(--white);
 }
 
 .btn.l {
@@ -431,6 +435,7 @@ section .btn-xl {
   .left-about {
     position: relative;
     width: 50%;
+    padding: 0 10px;
   }
 
   .left-header {
@@ -578,6 +583,11 @@ section .btn-xl {
 /* About me E*/
 
 /* My skills */
+
+.myskills {
+  padding: 250px 0;
+}
+
   .myskills h4::before {
     content: '';
     width: 600px;
@@ -673,6 +683,10 @@ section .btn-xl {
 
   @media screen and (max-width: 768px) {
 
+    .myskills {
+      padding: 100px 0;
+    }
+
     .myskills h4::before {
       width: 100%;
     }
@@ -711,9 +725,8 @@ section .btn-xl {
 }
 
 .recent-works-cont {
-  margin-left: auto;
-  margin-right: auto;
-  width: 90%;
+  margin: 0 auto;
+  width: 80%;
 }
 
 .recent-header p{
@@ -740,7 +753,7 @@ section .btn-xl {
   justify-content: center;
   align-items: center;
   margin-top: 80px;
-  height: 600px;
+  /* height: 600px; */
   /* border: dashed 1px var(--bg); */
 }
 
