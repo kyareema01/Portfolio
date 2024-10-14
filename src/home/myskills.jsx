@@ -5,6 +5,9 @@ import cssImg from './../assets/images/css.png'
 import bootsrapImg from './../assets/images/bootsrap.png'
 import tailwindImg from './../assets/images/tailwind.png'
 import nodeImg from './../assets/images/icons8-node-js-150.png'
+import htmlImg from './../assets/images/icons8-html.svg'
+import gitImg from './../assets/images/icons8-git.svg'
+import expressImg from './../assets/images/icons8-express-vpn.svg'
 
 export default function Myskills() {
 
@@ -32,7 +35,7 @@ const elementsRef = useRef([])
   }, [])
 
   return (
-    <div className='myskills'>
+    <div className='myskills' id='myskills'>
       <h4></h4>
 
       <div className="frontend">
@@ -65,6 +68,18 @@ const elementsRef = useRef([])
           <div className="logo hide" ref={(el) => elementsRef.current[5] = el}>
             <img src={nodeImg} alt="" />
             <p>Node Js</p>
+          </div>
+          <div className="logo hide" ref={(el) => elementsRef.current[6] = el}>
+            <img src={htmlImg} alt="" />
+            <p>Html</p>
+          </div>
+          <div className="logo hide" ref={(el) => elementsRef.current[7] = el}>
+            <img src={gitImg} alt="" />
+            <p>Git</p>
+          </div>
+          <div className="logo hide" ref={(el) => elementsRef.current[8] = el}>
+            <img src={expressImg} alt="" />
+            <p>Express</p>
           </div>
         </div>
       </div>

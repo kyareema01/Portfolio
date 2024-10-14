@@ -63,10 +63,11 @@ function Cards({
     <div 
     className='card-cont'
     style={{
-      transform: `translateX(${category === 'all' ? '0' : '-1%'})`,
+      transform: `translateX(${category === 'all' ? '0' : '10%'})`,
       transition: 'all 0.5s',
-      gridTemplateColumns: '1fr 1fr',
-      width: '80%',
+      display: 'grid',
+      gridTemplateColumns: `${window.innerWidth <= 768 ? '1fr' : ''}`,
+      width: '95%',
       margin: '0 auto'
     }}
     >

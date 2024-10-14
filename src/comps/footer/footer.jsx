@@ -9,22 +9,25 @@ import twitter from './../../assets/images/icons8-x.svg'
 import gmail from './../../assets/images/icons8-gmail.svg'
 
 export default function Footer() {
+
+  const paths = [
+    {name:  'home', img: home, path: '#home'},
+    {name:  'about', img: about, path: '#about'},
+    {name:  'contact', img: contact, path: '#contact'},
+  ]
+
   return (
     <footer>
       <div className="main-footer">
         <div className="navs">
-          <div className="home">
-            <img src={home} alt=".." />
-            <p>Home</p>
-          </div>
-          <div className="About">
-            <img src={about} alt=".." />
-            <p>About Me</p>
-          </div>
-          <div className="Contact">
-            <img src={contact} alt=".." />
-            <p>Contact</p>
-          </div>
+          {paths.map((path) => (
+            <div className="home" id='home'>
+              <a href={path.path}>
+                <img src={path.img} alt=".." />
+                <p>{path.name}</p>
+              </a>
+           </div>
+          ))}
         </div>
 
         <div className="socials">

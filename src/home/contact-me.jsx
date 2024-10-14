@@ -109,7 +109,7 @@ function RightContact() {
 
 export default function ContactMe() {
   return (
-    <div className='contact'>
+    <div className='contact' id='contact'>
       <LeftContact />
       <RightContact />
     </div>

@@ -19,7 +19,7 @@
   list-style-type: none;
   font-family: 'poppins', sans-serif;
   font-style: normal;
-  /* overflow-x: hidden; */
+  scroll-behavior: smooth;
 }
 
 /* Header */
@@ -73,7 +73,7 @@ section::before {
   z-index: 0;
   content: "";
   opacity: 0.2;
-  pointer-events: none;
+  /* pointer-events: none; */
 }
 
 .font {
@@ -89,8 +89,7 @@ section .intro-text {
 }
 
 .container {
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
 }
 
 section .intro-text .intro-heading {
@@ -160,14 +159,14 @@ ul li a:hover::before {
   border-right: 4px solid var(--white);
 }
 
-section .btn-xl {
-  color: var(--white);
-  border: 1px solid var(--white);
+.btn-cont {
   font-size: 18px;
-  width: 17%;
-  padding: 20px;
-  border-radius: 5px;
   transition: 0.3s ease all;
+  color: var(--white);
+
+  position: absolute;
+  bottom: 350px;
+  left: 46%;
 }
 
 .hamburg {
@@ -224,9 +223,9 @@ section .btn-xl {
     font-size: 35px;
   }
 
-  .btn-xl {
+  /* .btn-xl {
     display: none;
-  }
+  } */
 }
 
 /* Header E */
@@ -277,6 +276,16 @@ section .btn-xl {
   border: 2px solid var(--green);
   padding: 5px 20px;
   color: var(--bg);
+
+  display: flex;
+  align-items: center;
+  transition: 0.3s ease all;
+}
+
+.btn.xl {
+  border: 2px solid var(--white);
+  padding: 15px 25px;
+  color: var(--white);
 
   display: flex;
   align-items: center;
@@ -1068,12 +1077,15 @@ section .btn-xl {
     display: flex;
     justify-content: center;
     gap: 80px;
+    cursor: pointer;
   }
 
-  .home, .About, .Contact {
+  .home a {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 10px;
+    /* justify-content: center; */
+    /* gap: 10px; */
   }
 
   .socials {

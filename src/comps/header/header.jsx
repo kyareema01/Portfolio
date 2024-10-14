@@ -1,6 +1,6 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import Button from '../button'
 
 export default function Header() {
 
@@ -27,10 +27,10 @@ export default function Header() {
   },[]);
 
   const navs = [
-    {name: 'Home', data: 'Home', path: '/Home'},
-    {name: 'Skills', data: 'Skills', path: '/myskills'},
-    {name: 'About', data: 'About', path: '/about-me'},
-    {name: 'Contact', data: 'Contact', path: '/contact-me'}
+    {name: 'Home', data: 'Home', path: '#home'},
+    {name: 'About', data: 'About', path: '#about'},
+    {name: 'Skills', data: 'Skills', path: '#myskills'},
+    {name: 'Contact', data: 'Contact', path: '#contact'}
   ]
 
   const handleClick = () => {
@@ -64,9 +64,9 @@ export default function Header() {
           <ul className='nav navbar-right'>
             {navs.map((page, index) => (
               <li key={index}>
-                <Link data-text={page.data} className={`page-links ${active}`} to={page.path}>
+                <a data-text={page.data} className={`page-links ${active}`} href={page.path}>
                   {page.name}
-                </Link>
+                </a>
               </li>
             ))}
           </ul>
@@ -74,13 +74,16 @@ export default function Header() {
      </nav>
 
       <section>
-        <div className="container">
+        <div className="container" id='home'>
           <div className="intro-text">
             <h1 className="intro-heading">Full-stack<br/><b>Node JS</b> | <b>React JS</b> <br/>developer</h1>
-            <button href="#services" className="btn-xl">Download CV</button>
           </div>
         </div>
       </section>
+      <div className="btn-cont">
+        <Button children={'Download CV'} size={'xl'}/>
+      </div>
+      {/* <button className="btn-xl">Download CV</button> */}
     </header>
   )
 }
