@@ -65,8 +65,8 @@ function Cards({
     style={{
       transform: `translateX(${category === 'all' ? '0' : '-1%'})`,
       transition: 'all 0.5s',
-      gridTemplateColumns: '1fr 1fr',
-      width: '80%',
+      gridTemplateColumns: '1fr 1fr 1fr',
+      width: '90%',
       margin: '0 auto'
     }}
     >
