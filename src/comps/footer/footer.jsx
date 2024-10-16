@@ -31,11 +31,15 @@ export default function Footer() {
         </div>
 
         <div className="socials">
-          <img src={linkedln} alt=".." />
-          <Link to={'https://instagram.com/sir_jrr'}>
+          <Link to={'https://www.linkedin.com/in/abubakar-yareema-0788ab2a6?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app'}>
+            <img src={linkedln} alt=".." />
+          </Link>
+          <Link to={'https://www.instagram.com/sir_jrr?igsh=MWsyY2hhNmVucHhqMg%3D%3D&utm_source=qr'}>
             <img src={instagram} alt=".." />
           </Link>
-          <img src={twitter} alt=".." />
+          <Link to={'https://x.com/kyareema?s=21'}>
+            <img src={twitter} alt=".." />
+          </Link>
           <img src={gmail} alt=".." />
         </div>
 

@@ -1,8 +1,34 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { useEffect, useState } from 'react'
 import Button from '../button'
 
+const SideBar = ({
+  navs,
+  sidebar
+}) => {
+  return (
+    <div className="sidebar" ref={sidebar}>
+      {navs.map((nav, index) => (
+        <li key={index} className='sidebar-list'>
+          <a href={nav.path}>{nav.name}</a>
+        </li>
+      ))}
+
+    <div className="sidebar-btn">
+      <Button 
+        children={'Download CV'}
+        borderRadius={'2px'}
+        size={'l'}
+      />
+    </div>
+  </div>
+  )
+}
+
 export default function Header() {
+
+  const sidebar = useRef(null)
+  const hamburger = useRef(null)
 
   const [top, setTop] = useState('')
   const [active, setActive] = useState('')
@@ -19,12 +45,25 @@ export default function Header() {
       }
     };
 
+    const handleClose = (e) => {
+      if (
+        sidebar.current && !sidebar.current.contains(e.target) &&
+        hamburger.current && !hamburger.current.contains(e.target)
+      ) {
+        setOpen(open)
+      }
+    }
+
+    window.addEventListener('click', handleClose)
     window.addEventListener('scroll', handleScroll);
 
     return () => {
+      window.removeEventListener('click', handleClose);
       window.removeEventListener('scroll', handleScroll);
     };
-  },[]);
+  }, []);
+
+  console.log()
 
   const navs = [
     {name: 'Home', data: 'Home', path: '#home'},
@@ -45,31 +84,28 @@ export default function Header() {
         <a className={`font`} href="/home">Khalifa Yareema</a>
       </div>
 
-        <div onClick={handleClick} className={`hamburg ${open ? 'change' : ''}`}>
-          {navs.map((_, index) => {
-            let bar = ''
-
-            if (index === 0) {
-              bar = 'topp'
-            } else if (index === 1) {
-              bar = 'center'
-            } else {
-              bar = 'bottom'
-            }
-
-            return index > 2 ? null : <span key={index} className={`bar ${bar}`}></span>
-          })}
+        <div ref={hamburger} onClick={handleClick} className={`hamburg ${open ? 'change' : ''}`}>
+          <span className={`bar topp`}></span>
+          <span className={`bar center`}></span>
+          <span className={`bar bottom`}></span>
         </div>
 
-          <ul className='nav navbar-right'>
-            {navs.map((page, index) => (
-              <li key={index}>
-                <a data-text={page.data} className={`page-links ${active}`} href={page.path}>
-                  {page.name}
-                </a>
-              </li>
-            ))}
-          </ul>
+        {open && (
+          <SideBar 
+          navs={navs}
+          sidebar={sidebar}
+          />
+        )}
+
+        <ul className='nav navbar-right'>
+          {navs.map((page, index) => (
+            <li key={index}>
+              <a data-text={page.data} className={`page-links ${active}`} href={page.path}>
+                {page.name}
+              </a>
+            </li>
+          ))}
+        </ul>
       </div>
      </nav>
 
@@ -80,9 +116,9 @@ export default function Header() {
           </div>
         </div>
       </section>
-      <div className="btn-cont">
-        <Button children={'Download CV'} size={'xl'}/>
-      </div>
+      {/* <div className="btn-cont">
+        <Button children={'Download CV'} size={'xl'} />
+      </div> */}
       {/* <button className="btn-xl">Download CV</button> */}
     </header>
   )
