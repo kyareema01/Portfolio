@@ -9,9 +9,10 @@ const SideBar = ({
   return (
     <div className="sidebar" ref={sidebar}>
       {navs.map((nav, index) => (
+        index < 3 ? 
         <li key={index} className='sidebar-list'>
           <a href={nav.path}>{nav.name}</a>
-        </li>
+        </li> : ''
       ))}
 
     <div className="sidebar-btn">
@@ -66,10 +67,10 @@ export default function Header() {
   console.log()
 
   const navs = [
-    {name: 'Home', data: 'Home', path: '#home'},
     {name: 'About', data: 'About', path: '#about'},
     {name: 'Skills', data: 'Skills', path: '#myskills'},
-    {name: 'Contact', data: 'Contact', path: '#contact'}
+    {name: 'Contact', data: 'Contact', path: '#contact'},
+    {name: 'Dwnl CV', data: 'Dwnl CV', path: ''},
   ]
 
   const handleClick = () => {
@@ -81,7 +82,7 @@ export default function Header() {
     <nav>
       <div className={`container-nav ${top}`}>
       <div>
-        <a className={`font`} href="/home">Khalifa Yareema</a>
+        <a className={`font`} href='#home'>Khalifa Yareema</a>
       </div>
 
         <div ref={hamburger} onClick={handleClick} className={`hamburg ${open ? 'change' : ''}`}>
@@ -116,10 +117,6 @@ export default function Header() {
           </div>
         </div>
       </section>
-      {/* <div className="btn-cont">
-        <Button children={'Download CV'} size={'xl'} />
-      </div> */}
-      {/* <button className="btn-xl">Download CV</button> */}
     </header>
   )
 }

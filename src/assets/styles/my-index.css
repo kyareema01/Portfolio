@@ -159,16 +159,6 @@ ul li a:hover::before {
   border-right: 4px solid var(--white);
 }
 
-.btn-cont {
-  font-size: 18px;
-  transition: 0.3s ease all;
-  color: var(--white);
-
-  position: absolute;
-  bottom: 350px;
-  left: 46%;
-}
-
 .hamburg {
   display: none;
 }
@@ -261,9 +251,9 @@ ul li a:hover::before {
     font-size: 35px;
   }
 
-  /* .btn-xl {
+  .btn-cont {
     display: none;
-  } */
+  }
 }
 
 /* Header E */
