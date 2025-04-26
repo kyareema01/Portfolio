@@ -40,7 +40,10 @@ const elementsRef = useRef([])
 
       <div className="frontend">
         <div className="head">
-          <h3>TechStack</h3>
+          <div className='tech'>
+            <h3>TechStack</h3>
+          </div>
+          
           <div>Technologies i'm <br/><span>proficient</span><br/> working with</div>
         </div>
 

@@ -7,22 +7,24 @@ const SideBar = ({
   sidebar
 }) => {
   return (
-    <div className="sidebar" ref={sidebar}>
-      {navs.map((nav, index) => (
-        index < 3 ? 
-        <li key={index} className='sidebar-list'>
-          <a href={nav.path}>{nav.name}</a>
-        </li> : ''
-      ))}
+    <div className="sidebar-container">
+      <div className="sidebar" ref={sidebar}>
+        {navs.map((nav, index) => (
+          index < 3 ?
+            <li key={index} className='sidebar-list'>
+              <a href={nav.path}>{nav.name}</a>
+            </li> : ''
+        ))}
 
-    <div className="sidebar-btn">
-      <Button 
-        children={'Download CV'}
-        borderRadius={'2px'}
-        size={'l'}
-      />
+        <div className="sidebar-btn">
+          <Button
+            children={'Download CV'}
+            borderRadius={'2px'}
+            size={'l'}
+          />
+        </div>
+      </div>
     </div>
-  </div>
   )
 }
 
@@ -67,10 +69,10 @@ export default function Header() {
   console.log()
 
   const navs = [
-    {name: 'About', data: 'About', path: '#about'},
-    {name: 'Skills', data: 'Skills', path: '#myskills'},
-    {name: 'Contact', data: 'Contact', path: '#contact'},
-    {name: 'Dwnl CV', data: 'Dwnl CV', path: ''},
+    { name: 'About', data: 'About', path: '#about' },
+    { name: 'Skills', data: 'Skills', path: '#myskills' },
+    { name: 'Contact', data: 'Contact', path: '#contact' },
+    { name: 'CV', data: 'CV', path: 'https://drive.google.com/file/d/1v2nKd-VVict9AvjIyW08QFJrulqsRsjz/view?usp=drive_open' },
   ]
 
   const handleClick = () => {
@@ -78,42 +80,42 @@ export default function Header() {
   }
 
   return (
-  <header>
-    <nav>
-      <div className={`container-nav ${top}`}>
-      <div>
-        <a className={`font`} href='#home'>Khalifa Yareema</a>
-      </div>
+    <header>
+      <nav>
+        <div className={`container-nav ${top}`}>
+          <div>
+            <a className={`font`} href='#home'>Khalifa Yareema</a>
+          </div>
 
-        <div ref={hamburger} onClick={handleClick} className={`hamburg ${open ? 'change' : ''}`}>
-          <span className={`bar topp`}></span>
-          <span className={`bar center`}></span>
-          <span className={`bar bottom`}></span>
+          <div ref={hamburger} onClick={handleClick} className={`hamburg ${open ? 'change' : ''}`}>
+            <span className={`bar topp`}></span>
+            <span className={`bar center`}></span>
+            <span className={`bar bottom`}></span>
+          </div>
+
+          {open && (
+            <SideBar
+              navs={navs}
+              sidebar={sidebar}
+            />
+          )}
+
+          <ul className='nav navbar-right'>
+            {navs.map((page, index) => (
+              <li key={index}>
+                <a data-text={page.data} className={`page-links ${active}`} href={page.path}>
+                  {page.name}
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
-
-        {open && (
-          <SideBar 
-          navs={navs}
-          sidebar={sidebar}
-          />
-        )}
-
-        <ul className='nav navbar-right'>
-          {navs.map((page, index) => (
-            <li key={index}>
-              <a data-text={page.data} className={`page-links ${active}`} href={page.path}>
-                {page.name}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div>
-     </nav>
+      </nav>
 
       <section>
         <div className="container" id='home'>
           <div className="intro-text">
-            <h1 className="intro-heading">Full-stack<br/><b>Node JS</b> | <b>React JS</b> <br/>developer</h1>
+            <h1 className="intro-heading">Full-stack<br /><b>Node JS</b> | <b>React JS</b> <br />developer</h1>
           </div>
         </div>
       </section>

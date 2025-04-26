@@ -26,7 +26,7 @@
 
 .container-nav {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
 
   position: fixed;
@@ -35,13 +35,13 @@
   left: 0;
   z-index: 100;
   background-color: transparent;
-  padding: 50px;
+  padding: 50px 100px;
   transition: ease .3s all;
   color: var(--white);
 }
 
 .top {
-  padding: 20px 10px;
+  padding: 20px 100px;
   background: var(--light-gray);
   color: var(--bg);
   font-size: 24px !important;
@@ -110,12 +110,18 @@ ul {
 ul li {
   position: relative;
   visibility: visible;
+
+  width: 100%;
 }
 
 .page-links {
   font-size: 22px;
   color: transparent;
   -webkit-text-stroke: 1px var(--white);
+}
+
+ul li a {
+  font-size: 16px;
 }
 
 ul li a::before {
@@ -139,9 +145,10 @@ ul li a:hover {
 }
 
 ul li a:hover::before {
-  width: 100%;
+  width: 117%;
   position: absolute;
-  left: 6px;
+  border-radius: 3px;
+  left: 0px;
   filter: drop-shadow(0 0 25px #393E46);
   border-right: 4px solid var(--bg);
 }
@@ -186,6 +193,17 @@ ul li a:hover::before {
   transform: rotate(45deg) translate(-6px);
 }
 
+.sidebar-container {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0px;
+  left: 0;
+  z-index: 100;
+
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
 .sidebar {
   background-color: var(--white);
   min-width: 250px;
@@ -199,12 +217,11 @@ ul li a:hover::before {
   gap: 20px;
   justify-content: start;
 
-
-  position: fixed;
-  top: 90px;
+  position: absolute;
+  top: 98px;
+  right: 0;
   bottom: 0;
-  right: 0px;
-  z-index: 100;
+  
 }
 
 .sidebar li a {
@@ -459,7 +476,7 @@ ul li a:hover::before {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 200px;
+    /* gap: 100px; */
     padding: 100px 0px;
 
     position: relative;
@@ -467,8 +484,10 @@ ul li a:hover::before {
 
   .left-about {
     position: relative;
-    width: 50%;
-    padding: 0 10px;
+    width: 55%;
+    padding: 0 80px 0 0;
+
+    /* border: dashed 1px var(--bg); */
   }
 
   .left-header {
@@ -543,7 +562,14 @@ ul li a:hover::before {
   .right-about {
     position: relative;
     /* background: url(./../images/doodle-items.png); */
-    width: 60%;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+    padding: 0 0 0 100px;
+
+    /* border: dashed 1px var(--gray); */
+    width: 50%;
   }
 
   .doddle.about-me {
@@ -567,6 +593,24 @@ ul li a:hover::before {
   @media screen and (max-width: 1024px) {
     .about-me {
       flex-direction: column;
+      gap: 200px;
+      /* width: 100%; */
+    }
+
+    .left-about {
+      position: relative;
+      width: 85%;
+      padding: 0;
+  
+      /* border: dashed 1px var(--bg); */
+    }
+
+    .right-about {
+      position: relative;
+      display: flex;
+      padding: 0;
+  
+      width: 50%;
     }
 
     .arrowD img{
@@ -586,7 +630,9 @@ ul li a:hover::before {
     }
 
     .right-about {
-      width: 100%;
+      justify-content: center;
+      align-items: center;
+      width: 90%;
     }
 
     .content {
@@ -641,10 +687,22 @@ ul li a:hover::before {
   }
 
   .head {
-    margin-top: 50px;
-    width: 20%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* align-items: center; */
+
+
+    margin: 50px 0 0 95px;
+    width: 40%;
   }
 
+  .head .tech{
+    width: 50%;
+
+    display: flex;
+    justify-content: start;
+  }
   .head h3 {
     font-weight: 400;
     font-size: 20px;
@@ -656,6 +714,10 @@ ul li a:hover::before {
     font-size: 40px;
   }
 
+  .head div:nth-child(2) {
+    margin-left: 20px;
+  }
+
   .head span {
     color: var(--green);
   }
@@ -664,7 +726,7 @@ ul li a:hover::before {
     display: flex;
     flex-wrap: wrap;
     /* justify-content: end; */
-    width: 50%;
+    width: 62%;
   }
 
   .skills div p {
@@ -715,7 +777,6 @@ ul li a:hover::before {
   }
 
   @media screen and (max-width: 768px) {
-
     .myskills {
       padding: 100px 0;
     }
@@ -728,6 +789,8 @@ ul li a:hover::before {
       flex-direction: column;
       align-items: center;
       justify-content: center;
+
+      /* width: 100%; */
     }
 
     .skills {
@@ -735,6 +798,9 @@ ul li a:hover::before {
       width: 100%;
       justify-content: center;
       align-items: center;
+
+      /* display: none; */
+      /* border: dashed 1px var(--bg); */
     }
 
     .skills img {
@@ -743,8 +809,8 @@ ul li a:hover::before {
 
     .head {
       width: 100%;
+      margin: 0;
     }
-
   }
 
 
@@ -759,7 +825,7 @@ ul li a:hover::before {
 
 .recent-works-cont {
   margin: 0 auto;
-  width: 80%;
+  width: 90%;
 }
 
 .recent-header p{
@@ -792,11 +858,11 @@ ul li a:hover::before {
 
 .card-cont img {
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(1px);
+  /* background-color: rgba(0, 0, 0, 0.1); */
+  /* backdrop-filter: blur(1px); */
   border-radius: 20px;
   transition: ease 0.3s all;
-  object-fit: cover;
+  /* object-fit: cover; */
 }
 
 .card-cont img:hover {
@@ -807,9 +873,9 @@ ul li a:hover::before {
 .image-container {
   display: flex;
   border-radius: 20px;
-  /* border: dashed 1px var(--form); */
+  border: 1px solid var(--green);
   color: var(--white);
-  width: 100%;
+  /* width: 100%; */
   height: 300px;
 
   position: relative;
@@ -868,11 +934,12 @@ ul li a:hover::before {
     font-size: 42px;
   }
 
-  .card-cont {
-    grid-template-columns: 1fr 1fr;
+  /* .card-cont {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     width: 100%;
     height: 1200px;
-  }
+  } */
 
   .image-container.first, .image-container.third {
     align-self: center;
@@ -918,9 +985,13 @@ ul li a:hover::before {
 /* contact */
   .contact {
     display: flex;
-    justify-content: space-evenly;
-    gap: 100px;
-    padding: 250px 0px;
+    justify-content: space-around;
+    /* gap: 100px; */
+    padding: 100px 0px;
+  }
+
+  .left-contact {
+    width: 45%;
   }
 
   .left-contact-head h3 {
@@ -946,6 +1017,8 @@ ul li a:hover::before {
 
   .right-contact {
     position: relative;
+
+    /* width: 50%; */
   }
 
   form {
@@ -1003,7 +1076,6 @@ ul li a:hover::before {
   }
 
   @media screen and (max-width: 1024px) {
-
     .left-contact-bottom {
       justify-content: center;
       align-items: center;
@@ -1032,7 +1104,13 @@ ul li a:hover::before {
   @media screen and (max-width: 768px) {
     .contact {
       padding: 100px 0px;
+      gap: 100px;
       flex-direction: column;
+    }
+
+    .left-contact {
+      width: 100%;
+      padding-left: 10px;
     }
 
     .left-contact-bottom {

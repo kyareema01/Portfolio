@@ -8,21 +8,13 @@ import superMario from './../assets/images/superMario.png'
 import HangmanImg from './../assets/images/Hangman-Game.webp'
 import campusForum from './../assets/images/campusForum.avif'
 
-function Cards({
-  category
-}) {
+function Cards({ category }) {
   const cards = [
     {
       key: 0,
       name: 'project 1',
       imgSrc: workImg,
       caption: 'Omeife Technologies website',
-      category: 'web-design'
-    }, {
-      key: 1,
-      name: 'project 2',
-      imgSrc: workImg1,
-      caption: 'STEMfocus website',
       category: 'web-design'
     }, {
       key: 2,
@@ -63,7 +55,7 @@ function Cards({
     <div 
     className='card-cont'
     style={{
-      transform: `translateX(${category === 'all' ? '0' : '10%'})`,
+      // transform: `translateX(${category === 'all' ? '0' : '100px'})`,
       transition: 'all 0.5s',
       display: 'grid',
       gridTemplateColumns: `${window.innerWidth <= 768 ? '1fr' : ''}`,
