@@ -6,6 +6,11 @@ const SideBar = ({
   navs,
   sidebar
 }) => {
+
+  const handleClick = () => {
+    window.location.href = 'https://drive.google.com/file/d/1v2nKd-VVict9AvjIyW08QFJrulqsRsjz/view?usp=drive_open'
+  }
+
   return (
     <div className="sidebar-container">
       <div className="sidebar" ref={sidebar}>
@@ -19,6 +24,7 @@ const SideBar = ({
         <div className="sidebar-btn">
           <Button
             children={'Download CV'}
+            onClick={handleClick}
             borderRadius={'2px'}
             size={'l'}
           />
